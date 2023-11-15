@@ -16,6 +16,7 @@ route.get("/", async (req, res) => {
       })
       return res.status(200).json(filter)
    } catch (error) {
+    console.log(error);
      return res.status(500).json({ error: true });
    }
 })
@@ -38,6 +39,7 @@ route.get('/:name', async (req , res) =>{
     const {personGoodBad, personGoodGift, ...rest} = user
     return res.status(200).json(rest)
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: true });
   }
 })
@@ -67,6 +69,7 @@ route.post('/', async (req , res) =>{
 
     return res.status(200).json(users)
  } catch (error) {
+  console.log(error);
    return res.status(500).json({ error: true });
  }
 })
